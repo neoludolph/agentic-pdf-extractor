@@ -19,8 +19,8 @@
     "text-extraction",
     "image-extraction"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Neo Ludolph",
+  "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
     "mupdf": "^0.5.0",

@@ -1,15 +1,15 @@
 # 🔍 FIFI - PDF Content Extractor for AI Agents
 
-**FIFI** ermöglicht es AI Agents in IDEs (wie Antigravity, Cursor, etc.) PDF-Inhalte inklusive Bilder auszulesen. Die App stellt einen **MCP-Server** bereit und kann auch als **CLI-Tool** genutzt werden.
+**FIFI** enables AI Agents in IDEs (like Antigravity, Cursor, etc.) to read PDF content including images. The app provides an **MCP server** and can also be used as a **CLI tool**.
 
 ## ✨ Features
 
-- **Text-Extraktion** – Seitenweiser Text aus PDFs mit Metadaten
-- **Bild-Extraktion** – Seiten als Bilder rendern + eingebettete Bilder extrahieren
-- **MCP-Server** – Nahtlose Integration in AI-Agents via Model Context Protocol
-- **CLI-Tool** – Direkter Zugriff über die Kommandozeile
-- **Base64-Modus** – Bilder direkt als Base64 zurückgeben (ideal für AI Agents)
-- **Konfigurierbar** – DPI, Format (PNG/JPEG), Output-Verzeichnis
+- **Text Extraction** – Page-by-page text from PDFs with metadata
+- **Image Extraction** – Render pages as images + extract embedded images
+- **MCP Server** – Seamless integration into AI Agents via Model Context Protocol
+- **CLI Tool** – Direct access via command line
+- **Base64 Mode** – Return images directly as Base64 (ideal for AI Agents)
+- **Configurable** – DPI, format (PNG/JPEG), output directory
 
 ## 🚀 Installation
 
@@ -17,94 +17,98 @@
 npm install
 ```
 
-## 🤖 MCP Server (für AI Agents)
+## 🤖 MCP Server (for AI Agents)
 
-### Server starten
+### Start Server
 
 ```bash
 npm start
-# oder
+# or
 node server.js
 ```
 
-### In IDE konfigurieren
+### Configure in IDE
 
-Füge folgende Konfiguration in deine MCP-Settings ein (z.B. `.vscode/mcp.json`, `~/.cursor/mcp.json`, etc.):
+Add the following configuration into your MCP settings (e.g. `.vscode/mcp.json`, `~/.cursor/mcp.json`, etc.):
 
 ```json
 {
   "mcpServers": {
     "fifi-pdf-reader": {
       "command": "node",
-      "args": ["<absoluter-pfad-zu>/fifi/server.js"]
+      "args": ["<absolute-path-to>/fifi/server.js"]
     }
   }
 }
 ```
 
-### Verfügbare MCP Tools
+### Available MCP Tools
 
-| Tool | Beschreibung |
+| Tool | Description |
 |------|-------------|
-| `extract_pdf_text` | Extrahiert allen Text seitenweise aus einem PDF |
-| `extract_pdf_images` | Extrahiert/rendert Bilder aus einem PDF |
-| `extract_pdf_all` | Extrahiert Text + Bilder komplett |
+| `extract_pdf_text` | Extracts all text page-by-page from a PDF |
+| `extract_pdf_images` | Extracts/renders images from a PDF |
+| `extract_pdf_all` | Extracts text + images completely |
 
-## 💻 CLI Nutzung
+## 💻 CLI Usage
 
 ```bash
-# Text extrahieren
+# Extract text
 node cli.js text dokument.pdf
 
-# Bilder extrahieren
-node cli.js images bericht.pdf -o ./bilder -f jpeg -d 300
+# Extract images
+node cli.js images report.pdf -o ./images -f jpeg -d 300
 
-# Alles extrahieren (Text + Bilder)
-node cli.js all praesentation.pdf --json
+# Extract everything (text + images)
+node cli.js all presentation.pdf --json
 
-# MCP Server starten
+# Start MCP Server
 node cli.js serve
 ```
 
-### CLI Optionen
+### CLI Options
 
-| Option | Kurz | Beschreibung |
+| Option | Short | Description |
 |--------|------|-------------|
-| `--output-dir` | `-o` | Verzeichnis für extrahierte Bilder |
-| `--format` | `-f` | Bildformat: `png` oder `jpeg` |
-| `--dpi` | `-d` | Auflösung (Standard: 150 DPI) |
-| `--base64` | `-b` | Bilder als Base64-Strings ausgeben |
-| `--json` | `-j` | Ausgabe als JSON |
+| `--output-dir` | `-o` | Directory for extracted images |
+| `--format` | `-f` | Image format: `png` or `jpeg` |
+| `--dpi` | `-d` | Resolution (Standard: 150 DPI) |
+| `--base64` | `-b` | Output images as Base64 strings |
+| `--json` | `-j` | Output as JSON |
 
-## 📁 Projektstruktur
+## 📁 Project Structure
 
 ```
 fifi/
-├── extract_pdf.js   # Core: Text- & Bild-Extraktion
+├── extract_pdf.js   # Core: Text & image extraction
 ├── server.js        # MCP Server
 ├── cli.js           # CLI Interface
 ├── package.json
 └── README.md
 ```
 
-## 🔧 Wie es funktioniert
+## 🔧 How it works
 
-1. **Text-Extraktion**: Nutzt `pdf-parse` und `mupdf` für zuverlässige Textextraktion
-2. **Bild-Extraktion**: `mupdf` rendert jede Seite als Bild und extrahiert eingebettete Bilder
-3. **MCP-Protokoll**: Der Server kommuniziert via stdio mit dem AI Agent und stellt strukturierte Daten bereit
+1. **Text Extraction**: Uses `pdf-parse` and `mupdf` for reliable text extraction
+2. **Image Extraction**: `mupdf` renders each page as an image and extracts embedded images
+3. **MCP Protocol**: The server communicates via stdio with the AI Agent and provides structured data
 
-## 📋 Beispiel-Output (Text)
+## 📋 Example Output (Text)
 
 ```
 📄 PDF: C:\Users\example\document.pdf
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Pages: 3
-Title: Mein Dokument
-Author: Max Mustermann
+Title: My Document
+Author: John Doe
 
 ── Page 1 ─────────────────────────────
 Lorem ipsum dolor sit amet...
 
 ── Page 2 ─────────────────────────────
-Weitere Inhalte...
+Further content...
 ```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
