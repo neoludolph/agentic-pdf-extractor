@@ -1,0 +1,31 @@
+{
+  "name": "fifi",
+  "version": "1.0.0",
+  "description": "PDF Content Extractor for AI Agents - Extract text and images from PDFs via MCP or CLI",
+  "type": "module",
+  "main": "extract_pdf.js",
+  "bin": {
+    "fifi": "./cli.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node cli.js",
+    "test": "node cli.js --help"
+  },
+  "keywords": [
+    "pdf",
+    "mcp",
+    "ai-agent",
+    "text-extraction",
+    "image-extraction"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "mupdf": "^0.5.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
+    "sharp": "^0.33.5"
+  }
+}
