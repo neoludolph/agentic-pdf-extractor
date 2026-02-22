@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * FIFI - CLI for PDF Content Extraction
+ * Agentic-PDF-Extractor - CLI for PDF Content Extraction
  *
  * Usage:
  *   node cli.js text <pdf-path>          Extract text from a PDF
@@ -83,7 +83,7 @@ function parseArgs(args) {
 function printHelp() {
     console.log(`
 ╔═══════════════════════════════════════════════════════════════╗
-║                🔍 FIFI - PDF Content Extractor               ║
+║                  🔍 Agentic-PDF-Extractor                     ║
 ║          Extract text & images from PDFs for AI Agents        ║
 ╚═══════════════════════════════════════════════════════════════╝
 

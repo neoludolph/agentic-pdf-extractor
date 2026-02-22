@@ -1,5 +1,5 @@
 /**
- * FIFI - PDF Content Extractor for AI Agents
+ * Agentic-PDF-Extractor for AI Agents
  *
  * Core module for extracting text and images from PDF files.
  * Designed to provide structured output that AI agents in IDEs can consume.

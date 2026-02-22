@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * FIFI - MCP Server for PDF Content Extraction
+ * Agentic-PDF-Extractor - MCP Server for PDF Content Extraction
  *
  * Provides PDF reading capabilities to AI agents via Model Context Protocol.
  * Supports extracting text, images, and full content from PDF files.
@@ -13,7 +13,7 @@ import { z } from "zod";
 import { extractText, extractImages, extractAll } from "./extract_pdf.js";
 
 const server = new McpServer({
-    name: "fifi-pdf-reader",
+    name: "agentic-pdf-extractor",
     version: "1.0.0",
 });
 
@@ -249,7 +249,7 @@ server.tool(
 async function main() {
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.error("🚀 FIFI PDF Reader MCP Server running on stdio");
+    console.error("🚀 Agentic-PDF-Extractor MCP Server running on stdio");
 }
 
 main().catch((error) => {

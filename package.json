@@ -1,11 +1,11 @@
 {
-  "name": "fifi",
+  "name": "agentic-pdf-extractor",
   "version": "1.0.0",
   "description": "PDF Content Extractor for AI Agents - Extract text and images from PDFs via MCP or CLI",
   "type": "module",
   "main": "extract_pdf.js",
   "bin": {
-    "fifi": "./cli.js"
+    "agentic-pdf-extractor": "./cli.js"
   },
   "scripts": {
     "start": "node server.js",

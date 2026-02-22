@@ -1,6 +1,6 @@
-# 🔍 FIFI - PDF Content Extractor for AI Agents
+# 🔍 Agentic-PDF-Extractor
 
-**FIFI** enables AI Agents in IDEs (like Antigravity, Cursor, etc.) to read PDF content including images. The app provides an **MCP server** and can also be used as a **CLI tool**.
+**Agentic-PDF-Extractor** enables AI Agents in IDEs (like Antigravity, Cursor, etc.) to read PDF content including images. The app provides an **MCP server** and can also be used as a **CLI tool**.
 
 ## ✨ Features
 
@@ -34,9 +34,9 @@ Add the following configuration into your MCP settings (e.g. `.vscode/mcp.json`,
 ```json
 {
   "mcpServers": {
-    "fifi-pdf-reader": {
+    "agentic-pdf-extractor": {
       "command": "node",
-      "args": ["<absolute-path-to>/fifi/server.js"]
+      "args": ["<absolute-path-to>/pdf-extractor-mcp/server.js"]
     }
   }
 }
@@ -79,7 +79,7 @@ node cli.js serve
 ## 📁 Project Structure
 
 ```
-fifi/
+pdf-extractor-mcp/
 ├── extract_pdf.js   # Core: Text & image extraction
 ├── server.js        # MCP Server
 ├── cli.js           # CLI Interface
