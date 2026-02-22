@@ -1,8 +1,8 @@
-# 🔍 Agentic-PDF-Extractor
+# Agentic-PDF-Extractor
 
 **Agentic-PDF-Extractor** enables AI Agents in IDEs (like Antigravity, Cursor, etc.) to read PDF content including images. The app provides an **MCP server** and can also be used as a **CLI tool**.
 
-## ✨ Features
+## Features
 
 - **Text Extraction** – Page-by-page text from PDFs with metadata
 - **Image Extraction** – Render pages as images + extract embedded images
@@ -11,13 +11,13 @@
 - **Base64 Mode** – Return images directly as Base64 (ideal for AI Agents)
 - **Configurable** – DPI, format (PNG/JPEG), output directory
 
-## 🚀 Installation
+## Installation
 
 ```bash
 npm install
 ```
 
-## 🤖 MCP Server (for AI Agents)
+## MCP Server (for AI Agents)
 
 ### Start Server
 
@@ -50,7 +50,7 @@ Add the following configuration into your MCP settings (e.g. `.vscode/mcp.json`,
 | `extract_pdf_images` | Extracts/renders images from a PDF |
 | `extract_pdf_all` | Extracts text + images completely |
 
-## 💻 CLI Usage
+## CLI Usage
 
 ```bash
 # Extract text
@@ -76,7 +76,7 @@ node cli.js serve
 | `--base64` | `-b` | Output images as Base64 strings |
 | `--json` | `-j` | Output as JSON |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 pdf-extractor-mcp/
@@ -87,16 +87,16 @@ pdf-extractor-mcp/
 └── README.md
 ```
 
-## 🔧 How it works
+## How it works
 
 1. **Text Extraction**: Uses `pdf-parse` and `mupdf` for reliable text extraction
 2. **Image Extraction**: `mupdf` renders each page as an image and extracts embedded images
 3. **MCP Protocol**: The server communicates via stdio with the AI Agent and provides structured data
 
-## 📋 Example Output (Text)
+## Example Output (Text)
 
 ```
-📄 PDF: C:\Users\example\document.pdf
+PDF: C:\Users\example\document.pdf
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Pages: 3
 Title: My Document
@@ -109,6 +109,6 @@ Lorem ipsum dolor sit amet...
 Further content...
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
